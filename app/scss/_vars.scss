@@ -1,10 +1,19 @@
 $accent-color: #ff6838;
+$accent-catalog-color: #FAEDED;
 $accent-text-color: #31352b;
 $accent-title-color: #363853;
 $accent-symbol-color: #c2c2c2;
 $body-background-color: #f9faff;
 $btn-color: #fff;
+$box-shadow: #ECECEC;
 $bord-r: 6px;
+
+$breakpoints: (
+  "phone": 560px,
+  "tablet": 768px,
+  "tablet-2": 992px,
+  "desktop": 1230px
+);
 
 %rubik-300 {
   font-family: 'Rubik', sans-serif;
@@ -30,4 +39,12 @@ $bord-r: 6px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+
+%checkbox-hidden {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  position: absolute;
 }
