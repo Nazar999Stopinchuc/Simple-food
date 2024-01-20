@@ -1,0 +1,19 @@
+@include('components/_head.html',{
+  "title-name": "product"
+})
+
+@include('components/_header.html',{
+  "page": "catalog"
+})
+
+<main class="main">
+
+  @include('page-product/_product-info.html')
+
+  @include('page-product/_special-offer.html')
+
+</main>
+
+@include('components/_footer.html')
+
+@include('components/_scripts.html')
