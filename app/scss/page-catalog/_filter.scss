@@ -1,0 +1,79 @@
+.filter {
+  width: 270px;
+  margin-right: 30px;
+  padding-bottom: 20px;
+
+  &__wrap {
+    padding: 25px 15px;
+  }
+
+  &__close {
+    position: absolute;
+    height: 44px;
+    width: 44px;
+    right: 20px;
+    top: 20px;
+    border-radius: 3px;
+    background-color: $accent-catalog-color;
+    display: none;
+
+    &::after,
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 35px;
+      top: 22px;
+      left: 5px;
+      background-color: $accent-title-color;
+    }
+
+    &::after {
+      rotate: 45deg;
+    }
+
+    &::before {
+      rotate: -45deg;
+    }
+
+    @include mq ('tablet') {
+      display: block;
+    }
+  }
+
+  &__item {
+    background-color: $btn-color;
+    border: 1px solid $box-shadow;
+    border-radius: $bord-r;
+    width: 270px;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  &__name {
+    font-size: 18px;
+    border-radius: $bord-r;
+    padding: 0 5px 3px;
+    transition: box-shadow, color 0.3s;
+  }
+
+  @include mq ('tablet') {
+    z-index: 999;
+    position: fixed;
+    padding-top: 80px;
+    top: 0;
+    left: -200%;
+    height: 100vh;
+    width: 80%;
+    overflow-y: auto;
+    background-color: $btn-color;
+    transition: left 0.3s;
+
+    &--active {
+      left: 0;
+    }
+  }
+}

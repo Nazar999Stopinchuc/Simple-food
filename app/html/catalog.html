@@ -1,16 +1,18 @@
-<!DOCTYPE html>
-<html lang="ru">
-@include('components/_head.html')
+@include('components/_head.html', {
+  "title-name": "Catalog"
+})
 
-@include('components/_header.html')
+@include('components/_header.html', {
+  "page": "catalog"
+})
 
 <main class="main">
 
-  @include('components/_catalog.html')
+  @include('page-catalog/_catalog.html')
 
   @include('components/_mobile-app.html')
 
-  @include('components/_discount.html')
+  @include('page-catalog/_discount.html')
 
 </main>
 

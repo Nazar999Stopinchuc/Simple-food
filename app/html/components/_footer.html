@@ -2,19 +2,21 @@
   <div class="container">
     <div class="footer__top">
 
-      <form class="form-subscribe">
+      <div class="form-subscribe">
         <a class="logo footer__logo" href="#">
           <img class="logo__img" src="images/logo.svg" alt="логотип">
         </a>
 
-        <label class="sr-only" for="email">Ваш email</label>
-        <input class="form-subscribe__input" type="email" placeholder="Ваш email" name="email" id="email">
-        <button class="form-subscribe__btn btn-animation" type="submit">
-          <svg>
-            <use xlink:href="images/sprite.svg#icon-telegram"></use>
-          </svg>
-          Подписаться</button>
-      </form>
+        <form class="form-subscribe__form">
+          <label class="sr-only" for="email">Ваш email</label>
+          <input class="form-subscribe__input" type="email" placeholder="Ваш email" name="email" id="email">
+          <button class="form-subscribe__btn btn-animation" type="submit">
+            <svg>
+              <use xlink:href="images/sprite.svg#icon-telegram"></use>
+            </svg>
+            Подписаться</button>
+        </form>
+      </div>
 
       <ul class="footer__list">
         <li class="footer__item">
@@ -80,7 +82,7 @@
         </li>
       </ul>
 
-      <address class="contacts footer__contacts">
+      <address class="contacts footer__contacts" id="contacts">
         <ul class="contacts__list">
           <li class="contacts__item ">
             <a class="contacts__link contacts__link--adress link-animation" href="#">
@@ -114,7 +116,7 @@
               <span class="sr-only">ссылка на фейсбук</span>
             </a>
           </li>
-          <li class="socia-contacts__item">
+          <li class="social-contacts__item">
             <a class="social-contacts__link" href="#" target="_blank" rel="noreferrer noopener">
               <svg>
                 <use xlink:href="images/sprite.svg#icon-twitter"></use>

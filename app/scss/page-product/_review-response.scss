@@ -1,0 +1,106 @@
+.review-response {
+
+  &__form {
+    &--save {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 30px;
+      max-width: 560px;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    margin-bottom: 30px;
+
+    @include mq ('tablet') {
+      flex-direction: column;
+    }
+  }
+
+  &__form-label {
+    display: block;
+    margin-bottom: 15px;
+    color: $product-text-color;
+  }
+
+  &__form-input {
+    display: block;
+    margin-bottom: 7px;
+    width: 260px;
+    height: 57px;
+    padding: 18px 10px 18px 18px;
+    border-radius: 5px;
+    border: 1px solid $accent-symbol-color;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: $accent-color;
+    }
+
+    &:hover::placeholder {
+      color: $product-text-color;
+    }
+
+    &::placeholder {
+      color: $accent-symbol-color;
+      transition: color 0.3s;
+    }
+
+    &--message {
+      width: 400px;
+      height: 165px;
+      resize: none;
+      margin-bottom: 0;
+    }
+
+    &--mail {
+      @include mq ('tablet') {
+        margin-bottom: 0;
+      }
+    }
+
+    @include mq ('tablet') {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__inner {
+    margin-left: 30px;
+
+    @include mq ('tablet') {
+      margin-left: 0;
+    }
+  }
+
+  &__checkbox {
+    height: 24px;
+    width: 24px;
+    display: block;
+    border: 1px solid $accent-symbol-color;
+    cursor: pointer;
+  }
+
+  &__save-label {
+    font-size: 18px;
+    color: $product-text-color;
+    cursor: pointer;
+  }
+
+  &__btn {
+    padding: 12px 32px;
+    font-size: 18px;
+  }
+
+  &__grade {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    color: $product-text-color;
+  }
+}

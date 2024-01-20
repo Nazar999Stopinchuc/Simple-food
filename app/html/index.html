@@ -1,18 +1,22 @@
- @include('components/_head.html')
+ @include('components/_head.html', {
+  "title-name": "Simple food"
+ })
 
-  @include('components/_header.html')
+  @include('components/_header.html', {
+    "page": "home"
+  })
 
   <main class="main">
 
-    @include('components/_top-screen.html')
+    @include('page-index/_top-screen.html')
 
-    @include('components/_popular-categories.html')
+    @include('page-index/_popular-categories.html')
 
-    @include('components/_delivery-info.html')
+    @include('page-index/_delivery-info.html')
 
-    @include('components/_best-restaurants.html')
+    @include('page-index/_best-restaurants.html')
 
-    @include('components/_reviews.html')
+    @include('page-index/_reviews.html')
 
     @include('components/_mobile-app.html')
 

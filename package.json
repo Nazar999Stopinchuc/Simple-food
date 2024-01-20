@@ -26,6 +26,8 @@
     "jquery-form-styler": "^2.0.2",
     "mixitup": "^3.3.1",
     "sass": "^1.69.5",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "@fancyapps/ui": "^4.0.30",
+    "rateyo": "^2.3.2"
   }
 }

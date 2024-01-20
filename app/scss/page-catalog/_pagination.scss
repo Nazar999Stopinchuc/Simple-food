@@ -1,0 +1,53 @@
+.pagination {
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 6px;
+  }
+
+  &__item:nth-child(3) {
+    @include mq (phone) {
+      display: none;
+    }
+  }
+
+  &__item:nth-child(5) {
+    @include mq (phone) {
+      display: none;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    background-color: $accent-catalog-color;
+    transition: background-color, color, border-color, box-shadow, 0.3s;
+
+    &--active {
+      border: 1px solid $accent-title-color;
+    }
+
+    &--active-arrow .pagination__svg {
+      fill: $accent-symbol-color;
+    }
+  }
+
+  &__svg {
+    width: 14px;
+    height: 14px;
+    fill: $accent-title-color;
+    transition: fill 0.3s;
+
+    &--prev {
+      transform: rotate(180deg);
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.logo {
+  display: inline-block;
+  padding: 7px 0 2px;
+  max-height: 100%;
+  border-radius: $bord-r;
+  border: 2px solid transparent;
+  transition: opacity 0.3s, box-shadow 0.3s, color 0.3s;
+
+  &__img {
+    max-width: 200px;
+    max-height: 40px;
+
+    &--menu {
+      @include mq('tablet') {
+        max-width: 115px;
+        max-height: 23px;
+        object-fit: contain
+      }
+    }
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    background-color: rgba($btn-color, 0.01);
+    box-shadow: 0 0 0 2px rgba($accent-color, 0.70);
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

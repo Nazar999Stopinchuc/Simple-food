@@ -1,0 +1,19 @@
+.app-links {
+  display: flex;
+  gap: 30px;
+
+  &__link {
+    display: inline-block;
+    border: 1px solid $accent-symbol-color;
+    border-radius: $bord-r;
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $accent-color;
+    }
+  }
+
+  &__img {
+    border-radius: $bord-r;
+  }
+}

@@ -1,0 +1,99 @@
+.menu-mob {
+  display: none;
+  z-index: 999;
+  position: absolute;
+  left: -200%;
+  top: 0;
+  height: 100vh;
+  width: 50%;
+  overflow-y: auto;
+  background-color: $btn-color;
+  transition: left 0.3s;
+
+  &--active {
+    left: 0;
+  }
+
+  &__logo {
+    margin: 25px 0 25px 25px;
+    display: inline-block;
+    min-width: 200px;
+    min-height: 40px;
+  }
+
+  .logo__img {
+    min-width: 200px;
+    min-height: 30px;
+  }
+
+  .page-navigation {
+    display: block;
+
+    &__list {
+      flex-direction: column;
+      padding: 25px 0 25px 25px;
+      margin: 0 0 15px;
+      border-bottom: 1px solid #EEEFF3;
+      border-top: 1px solid #EEEFF3;
+    }
+
+    &__item:not(:last-child) {
+      margin-right: 0;
+    }
+
+    &__link {
+      display: block;
+      padding: 10px 0;
+    }
+  }
+
+  &__contacts {
+    padding-left: 25px;
+  }
+
+  &__close {
+    position: absolute;
+    display: block;
+    height: 44px;
+    width: 44px;
+    right: 25px;
+    top: 35px;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 44px;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: $accent-title-color;
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    @include mq('tablet') {
+      top: 24px;
+
+      &::after,
+      &::before {
+        width: 25px;
+      }
+    }
+  }
+
+  @include mq('tablet-2') {
+    display: block;
+  }
+
+  @include mq('tablet') {
+    width: 80%;
+  }
+}

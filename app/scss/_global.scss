@@ -125,6 +125,7 @@ body {
   font-size: 36px;
   line-height: 1.3;
   font-weight: 500;
+  color: $accent-title-color;
 
   @include mq('tablet') {
     margin-bottom: 30px;
@@ -167,5 +168,5 @@ body {
   color: $accent-title-color;
   padding-bottom: 15px;
   border-bottom: 1px solid $box-shadow;
-  margin: 0 0 25px 15px;
+  padding: 15px;
 }

@@ -1,0 +1,37 @@
+.contacts {
+  &__item:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  &__link {
+    position: relative;
+    font-size: 16px;
+    padding: 5px 0 5px 27px;
+    border-radius: $bord-r;
+    color: $accent-text-color;
+    @include line-clamp(1);
+
+    @include mq('tablet') {
+      padding: 13px 0 13px 27px
+    }
+  }
+
+  &__svg {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    top: 5px;
+    fill: none;
+    stroke: $accent-text-color;
+    transition: stroke 0.3s;
+
+    @include mq('tablet') {
+      top: 15px;
+    }
+  }
+
+  @include mq('tablet-2') {
+    order: 2;
+  }
+}

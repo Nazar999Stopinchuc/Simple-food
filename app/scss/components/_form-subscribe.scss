@@ -1,0 +1,70 @@
+.form-subscribe {
+  max-width: 200px;
+
+  &__list {
+    margin-right: 70px;
+  }
+
+  &__input {
+    display: block;
+    padding: 13px 15px;
+    margin-bottom: 12px;
+    width: 100%;
+    max-height: 44px;
+    font-size: 14px;
+    border-radius: $bord-r;
+    border: 1px solid $accent-symbol-color;
+    background-color: $btn-color;
+    color: $accent-symbol-color;
+    transition: box-shadow 0.3s;
+
+    &:hover::placeholder {
+      color: $accent-title-color;
+      transition: color 0.3s;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 2px $accent-color;
+      border: none;
+    }
+
+    &::placeholder {
+      color: $accent-symbol-color;
+      font-size: 14px;
+      line-height: 1.3;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    padding: 13px 38px 11px 70px;
+    width: 200px;
+    font-size: 14px;
+    line-height: 1.3;
+    @extend %rubik-500;
+
+
+    &svg {
+      transition: fill 0.3s;
+    }
+
+    &:hover svg,
+    &:focus svg,
+    &:active svg {
+      fill: $accent-color;
+    }
+  }
+
+  & svg {
+    position: absolute;
+    top: 13px;
+    left: 37px;
+    width: 17px;
+    height: 16px;
+    fill: $btn-color;
+  }
+
+  @include mq('tablet-2') {
+    order: 1;
+  }
+}

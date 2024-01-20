@@ -1,0 +1,50 @@
+.social-contacts {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+
+  &__link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: $box-shadow;
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+
+    & svg {
+      transition: fill 0.3s;
+      width: 20px;
+      height: 20px;
+
+    }
+
+    &:hover {
+      background-color: $accent-color;
+    }
+
+    &:hover svg {
+      fill: $btn-color;
+    }
+
+    &:focus {
+      background-color: rgba(255, 122, 80, 0.10);
+      box-shadow: 0 0 0 2px rgba($accent-color, 0.70);
+    }
+
+    &:focus svg {
+      fill: black;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+
+    &:active svg {
+      fill: $accent-color;
+    }
+  }
+}

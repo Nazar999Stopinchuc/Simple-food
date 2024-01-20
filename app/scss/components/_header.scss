@@ -1,0 +1,46 @@
+.header {
+  padding: 50px 0;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+  }
+
+  &__contacts {
+    display: none;
+
+    @include mq('tablet-2') {
+      display: block;
+      padding-left: 15px;
+    }
+  }
+
+  @include mq('tablet') {
+    padding: 10px 0;
+
+  }
+
+  &__wrapper {
+    display: block;
+    width: 100%;
+    left: 0;
+    top: 0;
+    right: 0;
+    transition: padding 0.4s;
+
+    &--fixed {
+      position: fixed;
+      z-index: 998;
+      padding: 20px 0;
+      background-color: $accent-catalog-color;
+    }
+  }
+
+}

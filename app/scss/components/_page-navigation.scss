@@ -1,0 +1,33 @@
+.page-navigation {
+  &__logo {
+    display: none;
+  }
+
+  &__list {
+    &--menu {
+      margin-right: 63px;
+    }
+  }
+
+
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 45px;
+  }
+
+  &__link {
+    border-radius: $bord-r;
+    font-size: 18px;
+
+    &--active {
+      color: $accent-color;
+    }
+  }
+
+  @include mq('tablet-2') {
+    display: none;
+  }
+}

@@ -1,0 +1,155 @@
+.special-offer {
+  &__item {
+    padding: 5px;
+
+    @include mq('phone') {
+      padding: 5px 0;
+    }
+  }
+
+  .slick-slider .slick-track {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .slick-initialized .slick-slide {
+    margin-right: 30px;
+
+    @include mq('desktop') {
+      margin-right: 20px;
+    }
+
+    @include mq('tablet-2') {
+      margin-right: 10px;
+    }
+
+    @include mq('phone') {
+      margin-right: 5px;
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: -85px;
+    padding: 0;
+    font-size: 0;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 3px solid $accent-symbol-color;
+    transition: background-color 0.3s, border-color 0.3s, opacity 0.3s, box-shadow 0.3s, filter 0.3s;
+
+    &:hover {
+      background: rgba(255, 122, 80, 0.10);
+      border-color: $accent-color;
+      opacity: 0.6;
+    }
+
+    &:hover::before {
+      filter: invert(64%) sepia(47%) saturate(5801%) hue-rotate(336deg) brightness(101%) contrast(103%);
+    }
+
+    &:focus {
+      border-color: $accent-color;
+    }
+
+    &:focus::before {
+      filter: invert(51%) sepia(61%) saturate(2442%) hue-rotate(336deg) brightness(100%) contrast(102%);
+    }
+
+    &:active {
+      opacity: 1;
+      background: rgba(255, 122, 80, 0.10);
+      border-color: rgba(255, 122, 80, 0.10);
+      box-shadow: none;
+    }
+
+    &:active::before {
+      filter: invert(64%) sepia(47%) saturate(5801%) hue-rotate(336deg) brightness(101%) contrast(103%);
+    }
+  }
+
+  .slick-prev,
+  .slick-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slick-prev {
+    right: 80px;
+  }
+
+  .slick-next {
+    right: 20px;
+  }
+
+  .slick-prev::before,
+  .slick-next::before {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 18px;
+    @extend %bg;
+    background-size: contain;
+  }
+
+  .slick-prev::before {
+    background-image: url('../images/icon/icon-chevron.svg');
+    transform: rotateY(180deg);
+  }
+
+  .slick-next::before {
+    background-image: url('../images/icon/icon-chevron.svg');
+  }
+
+  .slick-disabled {
+    border-color: $accent-color;
+
+    &::before {
+      filter: invert(64%) sepia(47%) saturate(5801%) hue-rotate(336deg) brightness(101%) contrast(103%);
+    }
+  }
+
+  @include mq ('tablet') {
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+
+      li {
+        button {
+          height: 15px;
+          width: 15px;
+          border-radius: 50%;
+          border: 1px solid $accent-symbol-color;
+          background-color: $accent-symbol-color;
+          padding: 0;
+          font-size: 0;
+          transition: background-color 0.3s, border-color 0.3s, opacity 0.3s, box-shadow 0.3s;
+
+          &:hover {
+            background-color: rgba(255, 122, 80, 0.10);
+            border-color: $accent-color;
+            opacity: 0.6;
+          }
+
+          &:active {
+            opacity: 0.6;
+            background-color: $accent-color;
+            border-color: $accent-color;
+            box-shadow: none;
+          }
+        }
+
+        &.slick-active {
+          button {
+            background-color: $accent-color;
+            border-color: $accent-color;
+          }
+        }
+      }
+    }
+  }
+}

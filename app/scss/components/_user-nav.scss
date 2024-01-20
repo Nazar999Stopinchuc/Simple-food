@@ -1,0 +1,88 @@
+.user-nav {
+  display: flex;
+
+  &__list {
+    display: flex;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    width: 44px;
+    border-radius: $bord-r;
+    border: 2px solid transparent;
+    @extend %bg;
+    background-size: 20px 20px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+
+    &:hover {
+      background-color: $accent-color;
+    }
+
+    &:hover svg {
+      stroke: $btn-color;
+    }
+
+    &:hover .user-nav__numb {
+      background-color: $btn-color;
+      color: $accent-color;
+    }
+
+    &:focus {
+      background-color: rgba(255, 122, 80, 0.10);
+      box-shadow: 0 0 0 2px rgba($accent-color, 0.70);
+    }
+
+    &:active {
+      background-color: $btn-color;
+      box-shadow: none;
+    }
+
+    &:active .user-nav__numb {
+      background-color: $accent-color;
+      color: $btn-color;
+    }
+
+    &:active svg {
+      stroke: $accent-title-color;
+    }
+  }
+
+
+  &__svg {
+    height: 20px;
+    width: 20px;
+    fill: none;
+    stroke: $accent-text-color;
+    stroke-width: 1.5;
+    transition: stroke 0.3s;
+  }
+
+  &__numb {
+    position: absolute;
+    top: 7px;
+    left: 26px;
+    padding: 2px 4px;
+    line-height: 1;
+    font-size: 10px;
+    color: $btn-color;
+    background-color: $accent-color;
+    border-radius: 10px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  @include mq('tablet-2') {
+    margin-right: 20px;
+  }
+
+  @include mq('tablet') {
+    margin-right: 0;
+  }
+}

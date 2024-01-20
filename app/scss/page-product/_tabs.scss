@@ -1,0 +1,145 @@
+.tabs {
+  max-width: 690px;
+  margin: 0 auto;
+
+  &__control {
+    display: flex;
+    margin-bottom: 30px;
+
+    @include mq ('tablet') {
+      overflow-x: auto;
+    }
+
+    @include mq ('phone') {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__control-item:not(:last-child) {
+    margin-right: 60px;
+
+    @include mq ('phone') {
+      margin-right: 30px;
+    }
+  }
+
+  &__tab {
+    font-size: 24px;
+    color: $accent-title-color;
+    border-radius: 3px;
+    white-space: nowrap;
+
+    &--active {
+      color: $accent-color;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    @include mq ('phone') {
+      font-size: 20px;
+    }
+  }
+
+  &__item {
+    display: none;
+
+    &.tabs__item--active {
+      display: block;
+    }
+  }
+
+  &__text {
+    margin-bottom: 15px;
+
+    @include mq ('phone') {
+      font-size: 16px;
+    }
+  }
+
+  &__options-item {
+    margin-bottom: 5px;
+
+    @include mq ('phone') {
+      font-size: 16px;
+    }
+  }
+
+  &__option {
+    font-weight: 500;
+  }
+
+  &__title {
+    color: $accent-title-color;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 30px;
+
+    @include mq ('phone') {
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+  }
+
+  &__review {
+    padding-bottom: 20px;
+  }
+
+  &__review:not(:last-child) {
+    border-bottom: 1px solid $product-line-color;
+    margin-bottom: 25px;
+  }
+
+  &__user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+
+    @include mq ('phone') {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__user-info {
+    padding-left: 95px;
+    position: relative;
+
+    @include mq ('phone') {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__user-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 70px;
+    width: 70px;
+    @extend %bg;
+    border-radius: 50%;
+  }
+
+  &__user-name,
+  &__user-date {
+    display: block;
+    color: $product-text-color;
+  }
+
+  &__user-name {
+    font-weight: 500;
+    margin-bottom: 3px;
+  }
+
+  &__user-date {
+    font-size: 18px;
+  }
+
+  &__review-text {
+    color: $product-text-color;
+  }
+}

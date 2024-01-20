@@ -1,0 +1,38 @@
+.bread-crumbs {
+  background-color: $accent-catalog-color;
+  padding: 24px 0;
+
+  &__list {
+    display: flex;
+    text-align: center;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 17px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url('../images/icon/icon-chevron.svg');
+      @extend %bg;
+      height: 11px;
+      width: 6px;
+      top: 11px;
+      right: -12px;
+      opacity: 0.6;
+      filter: invert(92%) sepia(5%) saturate(0%) hue-rotate(141deg) brightness(88%) contrast(81%);
+    }
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 1.2;
+    color: #505050;
+    border-radius: 3px;
+  }
+
+  @include mq ('phone') {
+    margin-bottom: 40px;
+  }
+}

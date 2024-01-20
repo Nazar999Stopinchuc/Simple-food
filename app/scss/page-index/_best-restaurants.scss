@@ -1,0 +1,64 @@
+.best-restaurants {
+  text-align: center;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @include mq('tablet-2') {
+      gap: 15px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mq('tablet') {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__item {
+    @include mq('tablet') {
+      padding-bottom: 10px;
+    }
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+
+    li {
+      button {
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        border: 1px solid $accent-symbol-color;
+        background-color: $accent-symbol-color;
+        padding: 0;
+        font-size: 0;
+        transition: background-color 0.3s, border-color 0.3s, opacity 0.3s, box-shadow 0.3s;
+
+        &:hover {
+          background-color: rgba(255, 122, 80, 0.10);
+          border-color: $accent-color;
+          opacity: 0.6;
+        }
+
+        &:active {
+          opacity: 0.6;
+          background-color: $accent-color;
+          border-color: $accent-color;
+          box-shadow: none;
+        }
+      }
+
+      &.slick-active {
+        button {
+          background-color: $accent-color;
+          border-color: $accent-color;
+        }
+      }
+    }
+  }
+}

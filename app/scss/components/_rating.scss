@@ -1,0 +1,14 @@
+.rating {
+  display: flex;
+  gap: 6px;
+
+  &__svg {
+    height: 16px;
+    width: 16px;
+    fill: #FFB800;
+
+    &--not-active {
+      fill:#C1C1C14D;
+    }
+  }
+}
