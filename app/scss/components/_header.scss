@@ -1,5 +1,5 @@
 .header {
-  padding: 50px 0;
+  padding-top: 160px;
 
   &__inner {
     display: flex;
@@ -23,21 +23,25 @@
   }
 
   @include mq('tablet') {
-    padding: 10px 0;
+    padding-top: 91px;
 
   }
 
   &__wrapper {
     display: block;
     width: 100%;
-    left: 0;
     top: 0;
-    right: 0;
+    position: fixed;
+    z-index: 997;
+    padding: 60px 0;
     transition: padding 0.4s;
 
+    @include mq('tablet') {
+      padding: 24px 0;
+
+    }
+
     &--fixed {
-      position: fixed;
-      z-index: 998;
       padding: 20px 0;
       background-color: $accent-catalog-color;
     }

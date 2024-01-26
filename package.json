@@ -9,8 +9,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@fancyapps/ui": "^4.0.30",
     "browser-sync": "^2.29.3",
     "del": "^6.1.1",
+    "gh-pages": "^6.1.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-cheerio": "^1.0.0",
@@ -25,9 +27,8 @@
     "jquery": "^3.7.1",
     "jquery-form-styler": "^2.0.2",
     "mixitup": "^3.3.1",
+    "rateyo": "^2.3.2",
     "sass": "^1.69.5",
-    "slick-carousel": "^1.8.1",
-    "@fancyapps/ui": "^4.0.30",
-    "rateyo": "^2.3.2"
+    "slick-carousel": "^1.8.1"
   }
 }

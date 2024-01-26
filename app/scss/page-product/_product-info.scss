@@ -34,6 +34,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     margin-right: 30px;
     height: 550px;
     max-width: 610px;
@@ -101,52 +102,22 @@
 
   &__minus,
   &__plus {
-    position: relative;
+    padding: 12px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    height: 44px;
-    width: 44px;
-    background-color: $accent-color;
+    border: 1px solid transparent;
+    z-index: 1;
 
-    &:hover .symbol,
-    &:focus .symbol,
-    &:active .symbol {
-      background-color: $accent-color;
+    &:hover svg {
+      stroke: $accent-color;
+      fill: $accent-color;
     }
 
-    &:hover .symbol::before,
-    &:focus .symbol::before,
-    &:active .symbol::before {
-      background-color: $accent-color;
+    &:focus svg {
+      stroke: $accent-color;
+      fill: $accent-color;
     }
-  }
-
-  &__plus-symbol {
-    width: 2px;
-    height: 20px;
-    background-color: $btn-color;
-    position: relative;
-    transition: background-color 0.3s;
-
-    &::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%) rotate(90deg);
-      width: 2px;
-      height: 20px;
-      background-color: $btn-color;
-      transition: background-color 0.3s;
-    }
-  }
-
-  &__minus-symbol {
-    width: 20px;
-    height: 1px;
-    background-color: $btn-color;
-    transition: background-color 0.3s;
   }
 
   &__minus {
@@ -155,6 +126,14 @@
 
   &__plus {
     border-radius: 0 3px 3px 0;
+  }
+
+  &__minus-svg,
+  &__plus-svg {
+    height: 20px;
+    width: 20px;
+    stroke: $btn-color;
+    fill: $btn-color;
   }
 
   &__quantity {
@@ -220,10 +199,22 @@
   }
 
   &__detailed {
+    columns: $accent-title-color;
     border-bottom: 2px solid currentColor;
     display: inline-block;
-    line-height: .85;
-    border-radius: 3px 3px 0 0;
+    line-height: 0.85;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border-bottom: none;
+      border-radius: $bord-r;
+      padding: 5px 0;
+    }
+
+    @include mq('tablet') {
+      font-size: 16px;
+    }
   }
 }
 
@@ -254,7 +245,7 @@
 }
 
 .carousel__dots {
-  top:calc(100% - 87px);
+  top: calc(100% - 87px);
   gap: 10px;
 }
 

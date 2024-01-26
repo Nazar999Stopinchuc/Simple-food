@@ -10,6 +10,23 @@ const svgSprite = require('gulp-svg-sprite');
 const cheerio = require('gulp-cheerio');
 const replace = require('gulp-replace');
 const fileInclude = require('gulp-file-include');
+const ghPages = require('gh-pages');
+const path = require('path');
+
+const htmlInclude = () => {
+  return src(['app/html/*.html'])
+    .pipe(fileInclude({
+      prefix: '@',
+      basepath: '@file',
+    }))
+    .pipe(dest('app'))
+    .pipe(browserSync.stream());
+}
+
+function deploy(cb) {
+  ghPages.publish(path.join(process.cwd(), './dist'), cb);
+}
+exports.deploy = deploy;
 
 function browsersync() {
   browserSync.init({
@@ -19,8 +36,6 @@ function browsersync() {
     notify: false
   })
 }
-
-
 
 function styles() {
   return src('app/scss/style.scss')
@@ -79,7 +94,8 @@ function build() {
   return src([
     'app/**/*.html',
     'app/css/style.min.css',
-    'app/js/main.min.js'
+    'app/js/main.min.js',
+    'app/fonts/**/*'
   ], {base: 'app'})
   .pipe(dest('dist'))
 }
@@ -106,16 +122,6 @@ function svgSprites() {
       })
     )
     .pipe(dest('app/images')); 
-}
-
-const htmlInclude = () => {
-  return src(['app/html/*.html']) 
-    .pipe(fileInclude({
-      prefix: '@',
-      basepath: '@file',
-    }))
-    .pipe(dest('app'))
-    .pipe(browserSync.stream());
 }
 
 function cleanDist() {

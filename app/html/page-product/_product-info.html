@@ -19,23 +19,22 @@
   <div class="product-info__top-wrap">
     <div class="container">
       <div class="product-info__top">
-        <ul class="product-info__slider" id="productCarousel">
-          <li class="product-info__item" data-src="/images/popular-categories/chicken-burger.jpg"
-            data-fancybox="gallery">
-            <img class="product-info__img" src="/images/popular-categories/chicken-burger.jpg" alt="изображение бургера"
-              width="600" height="600">
-          </li>
-          <li class="product-info__item" data-src="/images/popular-categories/chicken-burger.jpg"
-            data-fancybox="gallery">
-            <img class="product-info__img" src="/images/popular-categories/chicken-burger.jpg"
-              alt="изображение бургера">
-          </li>
-          <li class="product-info__item" data-src="/images/popular-categories/chicken-burger.jpg"
-            data-fancybox="gallery">
-            <img class="product-info__img" src="/images/popular-categories/chicken-burger.jpg"
-              alt="изображение бургера">
-          </li>
-        </ul>
+
+          <div class="product-info__slider">
+            <a data-src="images/popular-categories/chicken-burger.jpg" data-fancybox="gallery" id="productCarousel">
+              <img class="product-info__img" src="images/popular-categories/chicken-burger.jpg" alt="изображение бургера">
+            </a>
+
+            <div style="display:none">
+              <a data-fancybox="gallery" href="images/popular-categories/chicken-burger.jpg">
+                <img src="images/popular-categories/chicken-burger.jpg" />
+              </a>
+              <a data-fancybox="gallery" href="images/popular-categories/chicken-burger.jpg">
+                <img src="images/popular-categories/chicken-burger.jpg" />
+              </a>
+            </div>
+          </div>
+
         <div class="product-info__content">
           <h1 class="title product-info__title">Чизбургер с листьями салата</h1>
           <ul class="rating product-info__rating">
@@ -75,11 +74,15 @@
           <div class="product-info__counter" id="counter">
             <div class="product-info__counter-wrap">
               <button class="product-info__minus btn-animation" type="button">
-                <div class="product-info__minus-symbol symbol"></div>
+                <svg class="product-info__minus-svg">
+                  <use xlink:href="images/sprite.svg#icon-minus"></use>
+                </svg>
               </button>
               <span class="product-info__quantity">1</span>
               <button class="product-info__plus btn-animation" type="button">
-                <div class="product-info__plus-symbol symbol"></div>
+                <svg class="product-info__plus-svg">
+                  <use xlink:href="images/sprite.svg#icon-plus"></use>
+                </svg>
               </button>
             </div>
             <button class="product-info__add-btn btn-animation" type="button">
@@ -90,12 +93,20 @@
           </div>
 
           <h2 class="product-info__subtitle">Доставка и оплата</h2>
-          <p class="product-info__description">
-            Минимальная сумма заказа — 160 грн. <br>
-            Время доставки заказа — 80-140 мин. <br>
-            Оплата осуществляется только банковской картой. <br>
-            Окончательная сумма заказа формируется после сбора товаров.
-          </p>
+          <ul class="product-info__description">
+            <li class="product-info__description-item">
+              <p class="product-info__description-text">
+                Минимальная сумма заказа — 160 грн. </p>
+            </li>
+            <li class="product-info__description-item">
+              <p class="product-info__description-text"> Время доставки заказа — 80-140 мин. </p>
+            </li>
+            <li class="product-info__description-item">
+              <p class="product-info__description-text"> Оплата осуществляется только банковской картой. </p>
+              <p class="product-info__description-text"> Окончательная сумма заказа формируется после сбора товаров.</p>
+            </li>
+            <li class="product-info__description-item"></li>
+          </ul>
           <a class="product-info__detailed link-animation" href="#">Подробнее</a>
         </div>
       </div>
@@ -158,9 +169,9 @@
             <li class="tabs__review">
               <div class="tabs__user">
                 <div class="tabs__user-info">
-                  <div class="tabs__user-img" style="background-image: url('images/product/product-user.jpg') ;"></div>
-                  <span class="tabs__user-name">Андрей</span>
-                  <span class="tabs__date">10.06.2021</span>
+                  <img src="images/product/product-user.jpg" alt="фото пользователя" class="tabs__user-img">
+                  <cite class="tabs__user-name">Андрей</cite>
+                  <span class="tabs__user-date">10.06.2021</span>
                 </div>
                 <ul class="rating">
                   <li class="rating__item">
@@ -190,14 +201,14 @@
                   </li>
                 </ul>
               </div>
-              <p class="tabs__review-text">Доставили быстро. Товар свежий и очень вкусный, буду пробовать еще!))</p>
+              <q class="tabs__review-text">Доставили быстро. Товар свежий и очень вкусный, буду пробовать еще!))</q>
             </li>
             <li class="tabs__review">
               <div class="tabs__user">
                 <div class="tabs__user-info">
-                  <div class="tabs__user-img" style="background-image: url('images/product/product-user.jpg') ;"></div>
-                  <span class="tabs__user-name">Екатерина Белая</span>
-                  <span class="tabs__date">7.06.2021</span>
+                  <img src="images/product/product-user.jpg" alt="фото пользователя" class="tabs__user-img">
+                  <cite class="tabs__user-name">Екатерина Белая</cite>
+                  <span class="tabs__user-date">7.06.2021</span>
                 </div>
                 <ul class="rating">
                   <li class="rating__item">
@@ -227,9 +238,9 @@
                   </li>
                 </ul>
               </div>
-              <p class="tabs__review-text">этот бургер неплохой чтобы перекусить, когда нет возможности или времени
+              <q class="tabs__review-text">этот бургер неплохой чтобы перекусить, когда нет возможности или времени
                 что-нибудь приготовить. Это отличный вариант,
-                чтобы съесть на ходу, но чтобы побаловать себя, я больше предпочту пиццу</p>
+                чтобы съесть на ходу, но чтобы побаловать себя, я больше предпочту пиццу</q>
             </li>
           </ul>
 
@@ -252,13 +263,14 @@
                 <div class="review-response__inner">
                   <div class="review-response__form">
                     <label class="review-response__form-label" for="name">Имя</label>
-                    <input class="review-response__form-input" id="name" name="name" placeholder="Введите ваше имя">
+                    <input class="review-response__form-input" id="name" name="name" placeholder="Введите ваше имя"
+                      type="text">
                   </div>
 
                   <div class="review-response__form">
                     <label class="review-response__form-label" for="tel">Email *</label>
-                    <input class="review-response__form-input review-response__form-input--mail" type="email" id="tel" name="tel"
-                      placeholder="youremail@mail.com" required>
+                    <input class="review-response__form-input review-response__form-input--mail" type="email" id="tel"
+                      name="tel" placeholder="youremail@mail.com" required>
                   </div>
                 </div>
               </div>
@@ -270,7 +282,7 @@
                   последующих моих комментариев.</label>
               </div>
 
-              <button class="review-response__btn btn-animation">Оставить отзыв</button>
+              <button class="review-response__btn btn-animation" type="submit">Оставить отзыв</button>
             </form>
           </div>
         </li>

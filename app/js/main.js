@@ -1,7 +1,7 @@
 $(function () {
 
   let $page = $('html, body');
-  $('.page-navigation__link').click(function () {
+  $('.page-navigation__link, .logo').click(function () {
     $page.animate({
       scrollTop: $($.attr(this, 'href')).offset().top
     }, 800);
@@ -98,12 +98,22 @@ $(function () {
       }
     ]
   });
+
+  $('.burger').click(function () {
+    $('.menu-mob').addClass('menu-mob--active');
+    $('body').addClass('lock');
+  });
+
+  $('.menu-mob__close, .page-navigation__link').click(function () {
+    $('.menu-mob').removeClass('menu-mob--active');
+    $('body').removeClass('lock');
+  });
 });
 
 window.onscroll = function headerFixed() {
   let header = document.querySelector('.header__wrapper');
 
-  if (window.pageYOffset > 55) {
+  if (window.pageYOffset > 20) {
     header.classList.add('header__wrapper--fixed');
   } else {
     header.classList.remove('header__wrapper--fixed');
@@ -131,22 +141,9 @@ if (document.getElementById('counter')) {
 };
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.burger');
-  const burgerClose = document.querySelector('.menu-mob__close');
   const menuMob = document.querySelector('.menu-mob');
-
-  burger.addEventListener('click', () => {
-    menuMob.classList.add('menu-mob--active');
-    document.body.classList.add('lock');
-
-  });
-
-  burgerClose.addEventListener('click', () => {
-    menuMob.classList.remove('menu-mob--active');
-    document.body.classList.remove('lock');
-  });
 
   document.addEventListener('click', function (e) {
     if (e.target !== burger && e.target !== menuMob) {
@@ -253,10 +250,6 @@ if (window.location.pathname === '/catalog.html') {
 }
 
 if (window.location.pathname === '/product.html') {
-  const myCarousel = new Carousel(document.querySelector("#productCarousel"), {
-    preload: 1,
-    Dots: false,
-  });
 
   Fancybox.bind('[data-fancybox="gallery"]', {
     Thumbs: false,
@@ -265,13 +258,6 @@ if (window.location.pathname === '/product.html') {
     closeButton: "top",
     Carousel: {
       Dots: true,
-      on: {
-        change: (that) => {
-          myCarousel.slideTo(myCarousel.findPageForSlide(that.page), {
-            friction: 0,
-          });
-        },
-      },
     },
   });
 };
